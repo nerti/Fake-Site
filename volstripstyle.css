@@ -1,0 +1,345 @@
+form {
+    background: #555 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB9JREFUeNpi/P//PwM6YGLAAuCCmpqacC2MRGsHCDAA+fIHfeQbO8kAAAAASUVORK5CYII=);
+    font: 13px 'Lucida sans', Arial, Helvetica;
+    color: #eee;
+    float:right;
+	position:relative;
+	right:275px;
+}
+
+/*-------------------------------------*/
+
+.cf:before, .cf:after{
+  content:"";
+  display:table;
+}
+
+.cf:after{
+  clear:both;
+}
+
+.cf{
+  zoom:1;
+}
+
+.form-wrapper input {
+    width: 330px;
+    height: 20px;
+    padding: 10px 5px;
+    float: left;    
+    font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    border: 0;
+    background: #eee;
+    -moz-border-radius: 3px 0 0 3px;
+    -webkit-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;      
+}
+
+.form-wrapper input:focus {
+    outline: 0;
+    background: #fff;
+    -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+.form-wrapper input::-webkit-input-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+}
+
+.form-wrapper input:-moz-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.form-wrapper input:-ms-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}    
+
+.form-wrapper button {
+    overflow: visible;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 110px;
+    font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    color: #fff;
+    text-transform: uppercase;
+    background: green;
+    -moz-border-radius: 0 3px 3px 0;
+    -webkit-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;      
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+}   
+  
+.form-wrapper button:hover{        
+    background: green;
+}    
+  
+.form-wrapper button:active,
+.form-wrapper button:focus{   
+    background: green;    
+}
+
+.form-wrapper button:before {
+    content: '';
+    position: absolute;
+    border-width: 8px 8px 8px 0;
+    border-style: solid solid solid none;
+    border-color: transparent green transparent;
+    top: 12px;
+    left: -6px;
+}
+
+.form-wrapper button:hover:before{
+    border-right-color: green;
+}
+
+.form-wrapper button:focus:before{
+    border-right-color: green;
+}    
+
+.form-wrapper button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+ul {
+	list-style:none;
+}
+
+li {
+	display:inline-block;
+	text-decoration:none;
+	zoom: 1;
+	*display:inline;
+	padding:4px;
+	color:white;
+}
+
+a {
+	text-decoration:none;
+	:
+}
+
+body {
+    background-image: url(../images/web_background.jpg);
+    background-repeat: ;
+    background-attachment: scroll;
+    background-position: center; 
+  	width:1920px;
+  	height:1080px;
+  	padding: 0;
+    margin: 0;
+    opacity:50%;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 35px;
+    font-family: "Segoe UI";
+    font: 100 40px / 25px "Century Gothic";
+    text-align: center;
+    color: #666;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, .5);
+}
+
+.slider{
+	width: 700px; /*Same as width of the large image*/
+	position: relative;
+	/*Instead of height we will use padding*/
+	padding-top: 320px; /*That helps bring the labels down*/
+	
+	margin: 100px auto;
+	
+	/*Lets add a shadow*/
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+
+/*Last thing remaining is to add transitions*/
+.slider>img{
+	position: absolute;
+	left: 0; top: 0;
+	transition: all 0.5s;
+}
+
+.slider input[name='slide_switch'] {
+	display: none;
+}
+
+.slider label {
+	/*Lets add some spacing for the thumbnails*/
+	margin: 18px 0 0 18px;
+	border: 3px solid #999;
+	
+	float: left;
+	cursor: pointer;
+	transition: all 0.5s;
+	
+	/*Default style = low opacity*/
+	opacity: 0.6;
+}
+
+.slider label img{
+	display: block;
+}
+
+/*Time to add the click effects*/
+.slider input[name='slide_switch']:checked+label {
+	border-color: #666;
+	opacity: 1;
+}
+/*Clicking any thumbnail now should change its opacity(style)*/
+/*Time to work on the main images*/
+.slider input[name='slide_switch'] ~ img {
+	opacity: 0;
+	transform: scale(1.1);
+}
+/*That hides all main images at a 110% size
+On click the images will be displayed at normal size to complete the effect
+*/
+.slider input[name='slide_switch']:checked+label+img {
+	opacity: 1;
+	transform: scale(1);
+}
+/*Clicking on any thumbnail now should activate the image related to it*/
+
+/*We are done :)*/
+
+header {
+	position:relative;
+	top:10px;
+}
+
+nav{
+	position:relative;
+	left:10px;
+}
+
+nav ul {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+nav ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 20px;
+  background: black;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+nav ul li:hover {
+  background: #555;
+  color: #fff;
+}
+nav ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+
+a:link {
+    color:white;
+    text-decoration:none;
+}
+a:visited {
+    color:white;
+    text-decoration:none;
+}
+a:hover {
+    color:white;
+    text-decoration:none;
+}
+a:active {
+    color:white;
+    text-decoration:none;
+}
+
+nav ul li ul li { 
+  background: #555; 
+  display: block; 
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+nav ul li ul li:hover { background: #666; }
+nav ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+center {
+	float:left;
+	position:relative;
+	left:350px;
+}
+
+
+footer {
+	position:fixed;
+	bottom:-20px;
+	background-color:lightGray;
+	opacity:10%;
+	width:100%;
+}
+
+form {
+	position:relative;
+	right:580px;
+	bottom:45px;
+	height:40px;
+}
+
+h1, #game_links {
+	position:relative;
+	top:50px;
+}
+
+#top_line {
+	position:relative;
+	top:8px;
+}
+
+#main_content {
+	position:relative;
+	bottom:75px;
+}
+
+footer ul li {
+  display:inline;
+}
